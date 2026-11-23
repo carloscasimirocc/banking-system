@@ -3,6 +3,11 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionBackup
+pom.xml.next
 
 ### STS ###
 .apt_generated
@@ -31,3 +36,10 @@ build/
 
 ### VS Code ###
 .vscode/
+*.class
+*.jar
+*.war
+*.ear
+.env
+*.log
+Thumbs.db
