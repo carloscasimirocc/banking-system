@@ -24,6 +24,8 @@ public class CustomerService {
         String normalizedEmail = email.toLowerCase(Locale.ROOT)
                 .replaceAll("\\s+", "");
 
+       String normalizeFullName = fullname.trim().toLowerCase();
+
         if (customerRepository.existsByEmail(normalizedEmail)) {
             throw new CustomerAlreadyExistsException(normalizedEmail);
         }
@@ -31,7 +33,7 @@ public class CustomerService {
         Customer customer = new Customer();
 
         customer.setEmail(normalizedEmail);
-        customer.setFullname(fullname);
+        customer.setFullname(normalizeFullName);
         customer.setPhone(phone);
 
         return customerRepository.save(customer);
