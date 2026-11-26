@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 
+import com.banking.banking_system.dto.CustomerResponseDTO;
 import com.banking.banking_system.exception.CustomerAlreadyExistsException;
 import com.banking.banking_system.model.Customer;
 import com.banking.banking_system.repository.CustomerRepository;
@@ -39,4 +40,16 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    
+
+    public CustomerResponseDTO toResponseDTO(Customer customer){
+        return new CustomerResponseDTO(
+            customer.getId(),
+            customer.getFullname(),
+            customer.getEmail(),
+            customer.getPhone(),
+            customer.getCreatedAt()
+        );
+
+    }
 }

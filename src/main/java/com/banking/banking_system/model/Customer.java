@@ -74,7 +74,7 @@ public class Customer {
         return phone;
     }
     
-    public Instant getCreaatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
